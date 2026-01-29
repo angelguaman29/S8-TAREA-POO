@@ -1,41 +1,130 @@
-# PROGRAMACION-ORIENTADA-A-OBJETOS
-Este repositorio contiene el código fuente desarrollado durante la asignatura **Programación Orientada a Objetos**, impartida en la **Universidad Estatal Amazónica**. Está diseñado como un recurso de apoyo para estudiantes y profesionales interesados en conceptos y prácticas de programación orientada a objetos.
+# Cambios Realizados
 
-## Información de la asignatura
+## Objetivo
 
-- **Institución**: Universidad Estatal Amazónica (UEA)  
-- **Carrera**: Ingeniería en Tecnologías de la Información  
-- **Asignatura**: Programación Orientada a Objetos  
+Cambios realizados en el archivo `Dashboard.py` original para mejorar su estructura usando buenas prácticas de programación, modularidad y clases.
 
-## Contenido del repositorio
+---
 
-Este repositorio incluye:
-1. Ejercicios prácticos de programación orientada a objetos.
-2. Ejemplos de implementación en Python.
-3. Proyectos desarrollados como parte de las actividades de la asignatura.
-4. Documentación y apuntes adicionales para reforzar el aprendizaje.
+## ¿Qué cambios se hicieron?
 
-## Objetivos
+### 1. Crear carpeta "modelos"
 
-- Aplicar los principios fundamentales de la programación orientada a objetos.
-- Desarrollar soluciones eficientes y estructuradas utilizando Python.
-- Familiarizarse con conceptos como clases, objetos, herencia, polimorfismo y encapsulamiento.
+**Archivos creados:**
+- `modelos/menu.py` - Clase Menu
+- `modelos/proyecto.py` - Clase Proyecto
 
-## Instrucciones para el uso
+**Por qué:** Separar el código en clases hace más fácil entender y mantener.
 
-1. Clona el repositorio:  
+---
+
+### 2. Crear carpeta "servicios"
+
+**Qué es:** Carpeta que contiene las clases que hacen las operaciones.
+
+**Archivos creados:**
+- `servicios/gestor_proyectos.py` - Clase GestorProyectos
+
+**Por qué:** La lógica del programa está separada de la representación de datos.
+
+---
+
+### 3. Crear clase Menu
+
+**Responsabilidad:** Mostrar menús interactivos.
+
+**Métodos:**
+- `__init__()` - Inicializa el menu
+- `agregar_opcion()` - Agrega una opcion al menu
+- `mostrar()` - Muestra el menu en pantalla
+- `obtener_opciones()` - Retorna las opciones
+
+**Beneficio:** No hay que repetir código para mostrar menús.
+
+---
+
+### 4. Crear clase Proyecto
+
+**Responsabilidad:** Representar un proyecto.
+
+**Métodos:**
+- `__init__()` - Inicializa el proyecto
+- `obtener_nombre()` - Retorna el nombre
+- `obtener_descripcion()` - Retorna la descripcion
+- `obtener_ruta()` - Retorna la ruta
+- `mostrar_informacion()` - Muestra información
+
+**Beneficio:** Cada proyecto es un objeto reutilizable.
+
+---
+
+### 5. Crear clase GestorProyectos
+
+**Responsabilidad:** Gestionar la colección de proyectos.
+
+**Métodos:**
+- `__init__()` - Inicializa el gestor
+- `agregar_proyecto()` - Agrega un proyecto
+- `obtener_todos_proyectos()` - Retorna todos los proyectos
+- `contar_proyectos()` - Cuenta los proyectos
+- `buscar_por_nombre()` - Busca un proyecto por nombre
+- `listar_proyectos()` - Lista todos los proyectos
+
+**Beneficio:** Toda la lógica de gestión está en un solo lugar.
+
+---
+
+### 6. Actualizar Dashboard.py
+
+**Cambios:**
+- Ahora usa las clases creadas
+- Código más limpio y organizado
+- Menos código repetido
+- Más fácil de mantener
+
+**Antes:** Todo el código mezclado en un archivo.
+**Después:** Código organizado en clases.
+
+---
+
+## Estructura final
+
+```
+S8-TAREA-POO/
+├── modelos/
+│   ├── __init__.py
+│   ├── menu.py
+│   └── proyecto.py
+├── servicios/
+│   ├── __init__.py
+│   └── gestor_proyectos.py
+├── UNIDAD 1/
+├── UNIDAD 2/
+├── Dashboard.py (actualizado)
+└── README.md (actualizado)
+```
+
+---
+
+## Ventajas de los cambios
+
+✓ **Modularidad** - Código separado en clases
+✓ **Reutilización** - Las clases se pueden usar en otros proyectos
+✓ **Mantenibilidad** - Fácil de entender y modificar
+✓ **Escalabilidad** - Fácil de agregar nuevas funcionalidades
+✓ **Buenas prácticas** - Sigue estándares profesionales
+
+---
+
+## Cómo usar el Dashboard
+
+1. Ejecutar el programa:
    ```bash
-   git clone https://github.com/snogales-uea/2525-PROGRAMACION-ORIENTADA-A-OBJETOS.git
-   cd 2525-PROGRAMACION-ORIENTADA-A-OBJETOS 
+   python Dashboard.py
+   ```
 
-2. Crear un nuevo repositorio en tu cuenta de GitHub Ve a GitHub: https://github.com/new
+2. Seleccionar una opcion del menu
 
-3. Cambiar el repositorio remoto del proyecto clonado
-   ```bash
-   git remote remove origin
-   git remote add origin https://github.com/tu-usuario/proyecto-clonado.git
+3. Ver la informacion de los proyectos
 
-4. Subir el proyecto a tu repositorio personal
-   ```bash
-   git push -u origin main
-
+---
